@@ -1,0 +1,16 @@
+h2 {
+    background-color: lightgreen;
+    margin: 0;
+    padding: 10px;
+}
+
+p {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 0;
+}
+
+div {
+    background-color: lightgray;
+    margin: 0;
+}
