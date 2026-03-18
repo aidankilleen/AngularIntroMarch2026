@@ -1,0 +1,32 @@
+<h1>Members</h1>
+
+@if (isLoading) {
+    <p>Loading...</p>
+}
+
+@if (errorMessage) {
+    <p>{{errorMessage}}</p>
+}
+
+@if(!isLoading && !errorMessage) {
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Active</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (member of members; track member.id) {
+                <tr>
+                    <td>{{member.id}}</td>
+                    <td>{{member.name}}</td>
+                    <td>{{member.email}}</td>
+                    <td>{{member.active ? "Active" : "Inactive"}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

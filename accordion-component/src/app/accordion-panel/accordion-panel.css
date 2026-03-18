@@ -1,0 +1,9 @@
+h3 {
+    background-color: lightblue;
+    margin: 0px;
+    padding: 5px;
+}
+
+.open {
+    background-color: lightcoral;   
+}

@@ -1,0 +1,20 @@
+{
+	"items":[
+		{
+            "id":1, 
+            "title":"Json item 1", 
+            "text":"Json item 1"
+		},
+		{
+            "id":2, 
+            "title":"Json item 2", 
+            "text":"Json item 2"
+		},
+		{
+            "id":3, 
+            "title":"Json item 3", 
+            "text":"Json item 3"
+		}
+]
+
+}
