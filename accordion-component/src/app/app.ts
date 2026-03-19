@@ -15,41 +15,38 @@ import { NewsService } from './news-service';
         <app-accordion [items]="newsItems"/>
         <app-accordion [items]="ns.items"/>
 
-        <app-accordion [items]="jsonItems"/>
+        @if (items$ | async; as items) {
+          <app-accordion [items]="items"/>
+        }
 
-
-        {{ this.ns.getItems() | async | json }}
-
+        <!--{{ ns.getItems() | async | json }}-->
+        {{ items$ | async | json }}
   `,
   styleUrl: './app.css'
 })
 export class App implements OnInit {
   protected readonly title = signal('accordion-component');
-  /*
-  //public ns:NewsService;
 
-  constructor(public ns: NewsService) {
-    this.newsItems = ns.newsItems;
-
-    //this.ns = ns;
-  }
-  */
   ns:NewsService = inject(NewsService);
   
+  items$ = this.ns.getItems();
+
   newsItems:AccordionItem[]=[];
   jsonItems:AccordionItem[] = [];
   today: Date = new Date();
 
   ngOnInit(): void {
     console.log("ngOnInit() called");
-    /*
+/*    
     this.ns.getItems().subscribe({
       next: (data)=>{
         this.jsonItems = data;
+        console.log(data) 
       }, 
       error: () => {}
     });
-    */
+*/    
+    
   }
 
   
