@@ -1,0 +1,58 @@
+  <div>
+    User Details
+    <table>
+        <tr>
+          <td>Id</td>
+          <td>
+            @if(editing()) {
+                <input/>
+            } @else {
+                <span>{{user()?.id}}</span>
+            }
+          </td>
+      </tr>
+      <tr>
+          <td>Name</td>
+          <td>@if(editing()) {
+                <input 
+                    [value]="user()?.name"
+                    (keyup)="onNameChange($event.target.value)"/>
+            } @else {
+                <span>{{user()?.name}}</span>
+            }</td>
+      </tr>
+      <tr>
+          <td>Email</td><td>{{user()?.email}}</td>
+      </tr>
+      <tr>
+          <td>Active</td><td>{{user()?.active ? "Active" : "Inactive"}}</td>
+        </tr>
+    </table>
+
+    @if (editing()) {
+        <button (click)="onSave()">Save</button>
+        <button (click)="onCancel()">Cancel</button>
+
+    } @else {
+        <button (click)="onEdit()">Edit</button>
+
+    }
+    <!--
+    {{ name() }}<br>
+    <input 
+      [value]="name()"
+      (keyup)="onChange($event.target.value)"/>
+    <button (click)="onReset()">reset</button>
+    -->
+
+    <!-- older angular supported this syntax:
+    <input [(ngModel)] = "name"/>
+
+    This is no longer valid
+    -->
+    <hr/>
+
+    {{ user() | json }}<br/>
+    {{ editingUser() | json }}
+  </div>
+

@@ -4,10 +4,10 @@ import { Observable } from 'rxjs';
 
 
 export interface User {
-  id:number, 
-  name:string, 
-  email:string, 
-  active:boolean
+  id?:number, 
+  name?:string, 
+  email?:string, 
+  active?:boolean
 }
 
 @Injectable({
@@ -27,6 +27,13 @@ export class UsersService {
   getUser(id: number | string | null): Observable<User> {
    
     return this.http.get<User>(`${this.url}/${id}`);
+
+    
   }
+
+  // create
+  // update
+  // delete
+
 
 }
