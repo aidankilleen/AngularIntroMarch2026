@@ -8,11 +8,13 @@ import { JsonPipe } from '@angular/common';
   selector: 'app-reactive-forms-investigation',
   imports: [UserEditor, UserEditorForm, JsonPipe],
   template: `
-    <h2>Reactive Forms Investigation</h2>
+    <h2 ptSomeComponent  >Reactive Forms Investigation</h2>
 
-    <app-user-editor-form 
+    <!--<app-user-editor-form 
       [user]="user()" 
-      (saved)="onSaved($event)"/>
+      (saved)="onSaved($event)"/>-->
+    <app-user-editor-form 
+      [(user)]="user"/>
 
     <hr>
     {{ user() | json }}

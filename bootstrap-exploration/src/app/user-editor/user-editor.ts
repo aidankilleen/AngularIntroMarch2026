@@ -17,8 +17,6 @@ import { FormsModule } from '@angular/forms';
     {{ user() | json }}
   </div>
 
-
-
   `,
   styleUrl: './user-editor.css',
 })
